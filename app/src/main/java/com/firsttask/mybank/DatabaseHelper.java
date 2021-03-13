@@ -9,8 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    private String TABLE_NAME = "user_table";
-    private String TABLE_NAME1 = "transfers_table";
+    private String USER_TABLE = "cust_table";
+    private String TRANS_TABLE = "transfers_table";
 
     public DatabaseHelper(@Nullable Context context) {
         super(context, "User.db", null, 2);
@@ -18,48 +18,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME +" (PHONENUMBER INTEGER PRIMARY KEY ,NAME TEXT,BALANCE DECIMAL,EMAIL VARCHAR,ACCOUNT_NO VARCHAR,IFSC_CODE VARCHAR)");
-        db.execSQL("create table " + TABLE_NAME1 +" (TRANSACTIONID INTEGER PRIMARY KEY AUTOINCREMENT,DATE TEXT,FROMNAME TEXT,TONAME TEXT,AMOUNT DECIMAL,STATUS TEXT)");
-        db.execSQL("insert into user_table values(9000000000,'Harshit',9472.00,'harshit@gmail.com','XXXXXXXXXXXX1234','ABC09876543')");
-        db.execSQL("insert into user_table values(9111111111,'Ashok',582.67,'ashok@gmail.com','XXXXXXXXXXXX2341','BCA98765432')");
-        db.execSQL("insert into user_table values(9222222222,'Sudesh',1359.56,'sudesh@gmail.com','XXXXXXXXXXXX3412','CAB87654321')");
-        db.execSQL("insert into user_table values(9333333333,'Gaurav',1500.01,'gaurav@gmail.com','XXXXXXXXXXXX4123','ABC76543210')");
-        db.execSQL("insert into user_table values(9444444444,'Mansi',2603.48,'mansi@gmail.com','XXXXXXXXXXXX2345','BCA65432109')");
-        db.execSQL("insert into user_table values(9555555555,'Anmol',945.16,'anmol@gmail.com','XXXXXXXXXXXX3452','CAB54321098')");
-        db.execSQL("insert into user_table values(9666666666,'Deepanshu',5936.00,'deepanshu@gmail.com','XXXXXXXXXXXX4523','ABC43210987')");
-        db.execSQL("insert into user_table values(9777777777,'Vishnu',857.22,'vishnu@gmail.com','XXXXXXXXXXXX5234','BCA32109876')");
-        db.execSQL("insert into user_table values(9888888888,'Srishti',4398.46,'srishti@gmail.com','XXXXXXXXXXXX3456','CAB21098765')");
-        db.execSQL("insert into user_table values(9999999999,'Deepak',273.90,'deepak@gmail.com','XXXXXXXXXXXX4563','ABC10987654')");
+        db.execSQL("create table " + USER_TABLE + " (PHONENUMBER INTEGER PRIMARY KEY ,NAME TEXT,BALANCE DECIMAL,EMAIL VARCHAR,ACCOUNT_NO VARCHAR,IFSC_CODE VARCHAR)");
+        db.execSQL("create table " + TRANS_TABLE + " (TRANSACTIONID INTEGER PRIMARY KEY AUTOINCREMENT,DATE TEXT,FROMNAME TEXT,TONAME TEXT,AMOUNT DECIMAL,STATUS TEXT)");
+        db.execSQL("insert into cust_table values(2324222000,'Prakash',10000.00,'omPrakash@gmail.com','89XXXXXXXXXX3232','SBI004993')");
+        db.execSQL("insert into cust_table values(2239878939,'Pritam',14000.67,'mrpritam@gmail.com','90XXXXXXXXXX9087','IDBI223442')");
+        db.execSQL("insert into cust_table values(1378361313,'Ajay',50000.56,'dasajay@gmail.com','88XXXXXXXXXX1111','ALLBAD322322')");
+        db.execSQL("insert into cust_table values(4932842032,'Anil',67000.01,'yadavanil@gmail.com','32XXXXXXXXXX7912','SBI332450')");
+        db.execSQL("insert into cust_table values(5728732811,'Girish',9003.48,'munigirish@gmail.com','76XXXXXXXXXX5632','UNIO431342')");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
-        db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME1);
+        db.execSQL("DROP TABLE IF EXISTS "+USER_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS "+TRANS_TABLE);
         onCreate(db);
     }
 
     public Cursor readalldata(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from user_table", null);
+        Cursor cursor = db.rawQuery("select * from cust_table", null);
         return cursor;
     }
 
     public Cursor readparticulardata(String phonenumber){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from user_table where phonenumber = " +phonenumber, null);
+        Cursor cursor = db.rawQuery("select * from cust_table where phonenumber = " +phonenumber, null);
         return cursor;
     }
 
     public Cursor readselectuserdata(String phonenumber) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from user_table except select * from user_table where phonenumber = " +phonenumber, null);
+        Cursor cursor = db.rawQuery("select * from cust_table except select * from cust_table where phonenumber = " +phonenumber, null);
         return cursor;
     }
 
     public void updateAmount(String phonenumber, String amount){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("update user_table set balance = " + amount + " where phonenumber = " +phonenumber);
+        db.execSQL("update cust_table set balance = " + amount + " where phonenumber = " +phonenumber);
     }
 
     public Cursor readtransferdata(){
@@ -76,7 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("TONAME", to_name);
         contentValues.put("AMOUNT", amount);
         contentValues.put("STATUS", status);
-        Long result = db.insert(TABLE_NAME1, null, contentValues);
+        Long result = db.insert(TRANS_TABLE, null, contentValues);
         if(result == -1){
             return false;
         }else{

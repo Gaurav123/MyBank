@@ -42,8 +42,8 @@ public class splash_screen extends Activity {
     }
 
     private void startEnterAnimation() {
-        app_name.startAnimation(AnimationUtils.loadAnimation(com.firsttask.mybank.splash_screen.this, R.anim.bottom));
-        logo.startAnimation(AnimationUtils.loadAnimation(com.firsttask.mybank.splash_screen.this, R.anim.p_in));
+        app_name.startAnimation(AnimationUtils.loadAnimation(splash_screen.this, R.anim.anim_from_top));
+        logo.startAnimation(AnimationUtils.loadAnimation(splash_screen.this, R.anim.anim_from_bottom));
 
         logo.setVisibility(View.VISIBLE);
         designed.setVisibility(View.VISIBLE);

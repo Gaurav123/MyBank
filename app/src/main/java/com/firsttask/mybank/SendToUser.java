@@ -124,8 +124,8 @@ public class SendToUser extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        MenuItem search = menu.findItem(R.id.action_search);
+        getMenuInflater().inflate(R.menu.menu_history, menu);
+        MenuItem search = menu.findItem(R.id.action_history);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(search);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
