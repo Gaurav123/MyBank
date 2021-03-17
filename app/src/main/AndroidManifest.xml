@@ -9,11 +9,11 @@
         android:roundIcon="@drawable/bankicon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme_white">
+        <activity android:name=".PromotionActivity"></activity>
         <activity
             android:name=".lockScreen"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".splash_screen"
             android:screenOrientation="portrait"
@@ -27,12 +27,12 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Userlist"
             android:label="Banking System"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".Userdata"
             android:label="User Details"

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">My Bank</string>
+    <string name="promo_heading_one">User can see their details</string>
+    <string name="promo_heading_two">Use Lock for security</string>
+
+    <string name="promo_desc_one">Know user details from Here..</string>
+    <string name="promo_desc_two">Know history and transaction..</string>
+
+    <string name="promo_desc_three">Using key enter in app..</string>
+    <string name="promo_desc_four">Wrong key will not accepetd..</string>
+
 </resources>

@@ -21,7 +21,7 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnViewUsers;
+    private Button btnViewUsers,btnViewUsers2,btnViewUsers3,btnViewUsers4;
     ViewPager vp;
     TabLayout tl;
     DrawerLayout drawerLayout;
@@ -34,14 +34,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         btnViewUsers = findViewById(R.id.btnViewUsers);
+        btnViewUsers2 = findViewById(R.id.btnViewUsers1);
+        btnViewUsers3 = findViewById(R.id.btnViewUsers3);
+        btnViewUsers4 = findViewById(R.id.btnViewUsers4);
+
 
         btnViewUsers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MainActivity.class));
+            }
+        });
+        btnViewUsers2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, Userlist.class));
             }
         });
-        drawerLayout = findViewById(R.id.drawerLayout);
+        btnViewUsers3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, blankpage.class));
+            }
+        });
+        btnViewUsers4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, blankpage.class));
+            }
+        });
+
+
+//        drawerLayout = findViewById(R.id.drawerLayout);
 
 //       bottomNavigationView =(BottomNavigationView) findViewById(R.id.bottomNavigationView);
 //        bottomNavigationView.setSelectedItemId(R.id.id_home);

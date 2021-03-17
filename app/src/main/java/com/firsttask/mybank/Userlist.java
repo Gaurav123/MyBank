@@ -36,19 +36,13 @@ public class Userlist extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_allusers);
-        drawerLayout = findViewById(R.id.drawerLayout);
+//        drawerLayout = findViewById(R.id.drawerLayout);
 
         mRecyclerView = findViewById(R.id.recyclerview);
         mRecyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);//java42
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startEnterAnimation();
-            }
-        }, 2000);
+        mLoadingBar=new ProgressDialog(Userlist.this);
 
 
 //        BottomNavigationView bottomNavigationView =(BottomNavigationView) findViewById(R.id.bottomNavigationView);
@@ -91,17 +85,9 @@ public class Userlist extends AppCompatActivity {
 
         showData();
     }
-    private void startEnterAnimation() {
-        mRecyclerView.startAnimation(AnimationUtils.loadAnimation(Userlist.this, R.anim.anim_from_top));
-        mRecyclerView.setVisibility(View.VISIBLE);
-    }
 
     private void showData() {
         modelList_showlist.clear();
-        mLoadingBar=new ProgressDialog(Userlist.this);
-        mLoadingBar.setTitle("Fetching Details ");
-        mLoadingBar.setMessage("please wait...");
-        mLoadingBar.show();
         Cursor cursor = new DatabaseHelper(this).readalldata();
         while(cursor.moveToNext()){
             String balancefromdb = cursor.getString(2);
@@ -115,7 +101,7 @@ public class Userlist extends AppCompatActivity {
 
             Model model = new Model(cursor.getString(0), cursor.getString(1), price);
             modelList_showlist.add(model);
-            mLoadingBar.dismiss();
+
         }
 
         adapter = new CustomeAdapterUserlist(Userlist.this, modelList_showlist);

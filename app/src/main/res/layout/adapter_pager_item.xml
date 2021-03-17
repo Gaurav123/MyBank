@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/imageBackground"
+            android:layout_width="@dimen/two_fifty_dp"
+            android:layout_height="@dimen/two_fifty_dp"
+            android:layout_marginTop="@dimen/one_thirty_dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+        <TextView
+            android:id="@+id/textHeadingPromo"
+            android:layout_below="@id/imageBackground"
+            style="@style/DefaultBoldHeading"/>
+        <View
+            android:id="@+id/viewHeadLine"
+            android:layout_below="@id/textHeadingPromo"
+            style="@style/ViewHeadingLine" />
+
+        <LinearLayout
+            android:layout_below="@id/viewHeadLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/twenty_dp"
+            android:paddingStart="@dimen/ten_dp"
+            android:paddingEnd="@dimen/ten_dp"
+            android:paddingTop="@dimen/ten_dp"
+            android:paddingBottom="@dimen/five_dp">
+            <TextView
+                android:id="@+id/textPromoDesc1"
+                style="@style/PromoTextDesc"/>
+            <TextView
+                android:id="@+id/textPromoDesc2"
+                android:layout_marginTop="@dimen/five_dp"
+                style="@style/PromoTextDesc"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/subImage"
+            android:layout_width="@dimen/eighty_dp"
+            android:layout_height="@dimen/eighty_dp"
+            android:src="@drawable/bankicon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            tools:ignore="ContentDescription"
+            android:layout_marginBottom="@dimen/forty_five_dp"
+            android:layout_marginRight="@dimen/thirty_dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/thirty_dp" />
+    </RelativeLayout>
+</layout>

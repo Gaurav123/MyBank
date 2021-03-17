@@ -1,0 +1,86 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="PromoPage" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/lightGreen</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <item name="colorAccent">@color/lightGreen</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="ImageAtHomeBar">
+        <item name="android:layout_width">@dimen/twenty_five_dp</item>
+        <item name="android:layout_height">@dimen/twenty_five_dp</item>
+        <item name="android:layout_marginEnd">@dimen/ten_dp</item>
+        <item name="android:layout_marginRight">@dimen/ten_dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="ViewHeadingLine">
+        <item name="android:layout_width">@dimen/one_hundred_dp</item>
+        <item name="android:layout_height">@dimen/four_dp</item>
+        <item name="android:layout_marginStart">@dimen/twenty_eight_dp</item>
+        <item name="android:layout_marginLeft">@dimen/twenty_eight_dp</item>
+        <item name="android:layout_marginBottom">@dimen/five_dp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:background">@drawable/shape_heading_bar</item>
+    </style>
+
+
+    <style name="DefaultBoldHeading">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/twenty_dp</item>
+        <item name="android:layout_marginLeft">@dimen/twenty_dp</item>
+        <item name="android:layout_marginTop">@dimen/forty_dp</item>
+        <item name="android:paddingStart">@dimen/five_dp</item>
+        <item name="android:paddingEnd">@dimen/five_dp</item>
+        <item name="android:paddingLeft">@dimen/five_dp</item>
+        <item name="android:paddingRight">@dimen/five_dp</item>
+        <item name="android:paddingTop">@dimen/three_dp</item>
+        <item name="android:paddingBottom">@dimen/three_dp</item>
+        <item name="android:text">Heading</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/text_twenty_two_sp</item>
+    </style>
+    <style name="ViewPagerDots">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/twenty_five_dp</item>
+        <item name="android:layout_marginStart">@dimen/fifteen_dp</item>
+        <item name="android:layout_marginEnd">@dimen/fifteen_dp</item>
+        <item name="android:layout_marginLeft">@dimen/fifteen_dp</item>
+        <item name="android:layout_marginRight">@dimen/fifteen_dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="PromoTextDesc">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">start</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">@color/lighterBlack</item>
+        <item name="android:textSize">@dimen/text_twelve_sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="MediumButtonDesign">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">@dimen/thirty_dp</item>
+        <item name="android:paddingEnd">@dimen/thirty_dp</item>
+        <item name="android:paddingLeft">@dimen/thirty_dp</item>
+        <item name="android:paddingRight">@dimen/thirty_dp</item>
+        <item name="android:paddingTop">@dimen/fifteen_dp</item>
+        <item name="android:paddingBottom">@dimen/fifteen_dp</item>
+        <item name="android:elevation" tools:targetApi="lollipop">@dimen/fifty_dp</item>
+        <item name="android:textSize">@dimen/text_sixteen_point_five_sp</item>
+        <item name="android:fontFamily">@font/lato_black</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:text">Get Started</item>
+        <item name="android:buttonCornerRadius" tools:targetApi="p">@dimen/fifteen_dp</item>
+        <item name="android:background">@color/lightGreen</item>
+    </style>
+
+</resources>

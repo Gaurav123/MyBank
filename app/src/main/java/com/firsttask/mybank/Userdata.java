@@ -41,10 +41,6 @@ public class Userdata extends AppCompatActivity {
         balance = findViewById(R.id.balance);
         transfer_button = findViewById(R.id.transfer_button);
 
-        progressDialog = new ProgressDialog(Userdata.this);
-        progressDialog.setTitle("Loading data...");
-        progressDialog.show();
-
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
             phonenumber = bundle.getString("phonenumber");
@@ -71,7 +67,7 @@ public class Userdata extends AppCompatActivity {
             nf.setMinimumFractionDigits(2);
             String price = nf.format(newbalance);
 
-            progressDialog.dismiss();
+
 
             phoneNumber.setText(cursor.getString(0));
             name.setText(cursor.getString(1));

@@ -15,6 +15,12 @@
             android:id="@+id/id_about"
             android:title="About"
             android:icon="@drawable/ic_baseline_settings_24"/>
+    <item
+        android:id="@+id/action_history"
+        android:title="Search"
+        android:icon="@drawable/history"
+        app:showAsAction="always">
+    </item>
     </menu>
 
 
